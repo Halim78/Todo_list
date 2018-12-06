@@ -34,7 +34,7 @@ class Users extends Component {
                         type="button" 
                         className="btn btn-outline-info"
                         onClick={this.handleClick}
-                        >Afficher
+                        >View
                         </button>
                     </form>
                 </div>

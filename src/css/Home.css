@@ -1,6 +1,6 @@
 body
 {
-    background-image: url('http://maxpeed.com/wp-content/uploads/2013/07/fondo-claro.jpg');
+    background-image: url('http://www.top-line.fr/images/78777_tekstury_seryj_fon_oboi_2560x1600_(www.GdeFon.ru).jpg');
     background-repeat:no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
@@ -43,10 +43,15 @@ button
 {
     margin-left: 20%;
     margin-top: 20px;
-
 }
 
 button
 {
     width: 305px !important;
+}
+
+.all-todo
+{
+    margin-left: 80%;
+    border-radius: 50px;
 }

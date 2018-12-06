@@ -3,6 +3,8 @@ import '../css/Home.css';
 import Todo from './Todo';
 import Photos from './Photos';
 import Users from './Users';
+import { NavLink } from 'react-router-dom';
+
 
 
 class Home extends Component {
@@ -12,12 +14,13 @@ class Home extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col">
-            <h1>TODO List</h1>
+            <NavLink exact to='/allTodos'><button className="all-todo">All To Do</button></NavLink>
+            <h1>TO DO List</h1>
             </div>
           </div>
           <div className="row">
             <div className=" col-md-4">
-              <h2>TODO</h2>
+              <h2>TO DO</h2>
                 <Todo />
             </div>
             <div className=" col-md-4">
@@ -39,11 +42,3 @@ export default Home;
 
 
 
-
-          //       
-          // <div id="todo_list">
-          //   <h2>ToDo</h2>
-          //   <input placeholder="Ajouter..."></input><br />
-          //   <button type="button" class="btn btn-outline-primary">Choisir</button>
-          // </div>
-       

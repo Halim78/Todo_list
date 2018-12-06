@@ -34,7 +34,7 @@ class Todo extends Component {
                         type="button" 
                         className="btn btn-outline-info"
                         onClick={this.handleClick}
-                        >Afficher
+                        >View
                         </button>
                     </form>
                 </div>
@@ -42,7 +42,7 @@ class Todo extends Component {
          </div>
          {this.state.resultat.slice(0,20).map((e, i) => 
          <button key={i} type="button" data-toggle="modal" data-target=".bd-example-modal-sm" className="button-list" >
-         <h3>ToDo {e.id}</h3><br />
+         <h3>To Do {e.id}</h3><br />
          Title : {e.title}<br /><br />
          Completed : {e.completed.toString()}
          
