@@ -25,7 +25,7 @@ class Home extends Component {
                 <Photos />
             </div>
             <div className="col-md-4">
-              <h2>Amis</h2>
+              <h2>Users</h2>
               <Users />
             </div>
           </div>
