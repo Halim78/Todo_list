@@ -5,7 +5,8 @@ import '../css/Photos.css';
 class Photos extends Component {
 
   state = {
-    resultat : []
+    resultat : [],
+    success: false
   } 
 
   handleClick = (e) => {
@@ -13,7 +14,8 @@ class Photos extends Component {
       .get('https://jsonplaceholder.typicode.com/photos')
       .then(res => 
         this.setState({
-          resultat : res.data
+          resultat : res.data,
+          success : !this.state.success
         })
       )
 
@@ -40,9 +42,10 @@ class Photos extends Component {
                 </div>
             </div>
          </div>
-         {this.state.resultat.slice(0,20).map((e, i) => 
-         <p><img key={i} src={e.url} alt="souvenirs"/></p>
-         )}
+         {this.state.success ? 
+         this.state.resultat.slice(0,20).map((e, i) => 
+         <p><img key={i} src={e.url} alt="souvenirs"/></p>)
+         : ""}
       </div>
     )
   }

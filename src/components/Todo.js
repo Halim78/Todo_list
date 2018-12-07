@@ -5,7 +5,8 @@ import '../css/Todo.css';
 class Todo extends Component {
 
   state = {
-    resultat : []
+    resultat : [],
+    success : false
   } 
 
   handleClick = (e) => {
@@ -13,7 +14,8 @@ class Todo extends Component {
       .get('https://jsonplaceholder.typicode.com/todos')
       .then(res => 
         this.setState({
-          resultat : res.data
+          resultat : res.data,
+          success : !this.state.success
         })
       )
 
@@ -40,14 +42,13 @@ class Todo extends Component {
                 </div>
             </div>
          </div>
-         {this.state.resultat.slice(0,20).map((e, i) => 
+         {this.state.success ? 
+         this.state.resultat.slice(0,20).map((e, i) =>  
          <button key={i} type="button" data-toggle="modal" data-target=".bd-example-modal-sm" className="button-list" >
          <h3>To Do {e.id}</h3><br />
          Title : {e.title}<br /><br />
          Completed : {e.completed.toString()}
-         
-         </button>
-         )}
+         </button>) : ""}
       </div>
     )
   }

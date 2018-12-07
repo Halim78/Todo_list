@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import '../css/Home.css';
 import Todo from './Todo';
 import Photos from './Photos';
-import Users from './Users';
+import Friends from './Friends';
 import { NavLink } from 'react-router-dom';
+// import Route from '../Routes/Route';
 
 
 
@@ -29,10 +30,11 @@ class Home extends Component {
             </div>
             <div className="col-md-4">
               <h2>Friends</h2>
-              <Users />
+              <Friends />
             </div>
           </div>
         </div>
+        {/* <Route /> */}
       </div>
     )
   }

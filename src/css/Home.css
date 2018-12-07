@@ -52,6 +52,12 @@ button
 
 .all-todo
 {
-    margin-left: 80%;
     border-radius: 50px;
+    margin-left: 80%;
 }
+/* 
+@media all and (min-width: 612px){
+    .all-todo {
+        margin-right: 60%;
+    }
+} */
