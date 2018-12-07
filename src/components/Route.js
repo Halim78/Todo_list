@@ -30,7 +30,7 @@ import '../css/Route.css';
             })
         }
 
-    //Modifier un élément (le id)    
+    //Modifier un élément avec le id (visible sur la console)   
     handlePut = (e) => {
         const id = this.state.put
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -52,7 +52,7 @@ import '../css/Route.css';
             })
         }
 
-    //Supprimer un élément avec un id    
+    //Supprimer un élément avec un id (visible sur la console) 
     handleDelete = () => {
         const id = this.state.delete
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
