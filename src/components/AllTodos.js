@@ -7,31 +7,45 @@ import '../css/AllTodos.css';
 class AllTodos extends Component {
 
   state = {
-    resultat : []
+    item : '',
+    newResult : [],
   } 
 
-  handleClick = (e) => {
-    axios
-      .get('https://jsonplaceholder.typicode.com/todos')
-      .then(res => 
-        this.setState({
-          resultat : res.data
-        })
-      )
+
+  handleChange = (e) => {
+    this.setState({
+        item : e.target.value
+    })
   }
 
+  componentDidMount = () => {
+    axios
+    .get('https://jsonplaceholder.typicode.com/todos')
+    .then(res => 
+      this.setState({
+        newResult : res.data
+      })
+    )
+  }
 
+ 
   render() {
-    if(this.state.resultat === []){ 
-     return  <p>Loading...</p>
-    }
+    const todoSearch = 
+    this.state.newResult.filter(f => (f.title.indexOf(this.state.item) !== -1));
+
     return (
       <div className="container-fluid">
         <div className="row">
-          <nav class="navbar navbar-light" styleName="background-color: #e3f2fd;">
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button><br />
+          <nav className="navbar navbar-light">
+            <form className="form-inline">
+                <input 
+                className="form-control mr-sm-2" 
+                type="search" 
+                placeholder="Search" 
+                aria-label="Search"
+                onChange={this.handleChange} 
+                />
+                {/* <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button><br /> */}
             </form>
           </nav>
         </div>
@@ -48,18 +62,41 @@ class AllTodos extends Component {
                     </form>
                 </div>
             </div>
-         </div>
-         {this.state.resultat.map((e, i) => 
-         <button key={i} type="button" data-toggle="modal" data-target=".bd-example-modal-sm" className="button-list" >
-         <h3>To Do {e.id}</h3><br />
-         Title : {e.title}<br /><br />
-         Completed : {e.completed.toString()}
-         
-         </button>
-         )} */}
+         </div> 
+         */}
+         {todoSearch.map((e, i) => 
+         <button 
+          key={i} 
+          type="button" 
+          data-toggle="modal" 
+          data-target=".bd-example-modal-sm" 
+          className="button-list" >
+          <h3>To Do {e.id}</h3><br />
+          Title : {e.title}<br /><br />
+          Completed : {e.completed.toString()}
+          </button>
+         )}
       </div>
     )
   }
 }
 
 export default AllTodos;
+
+
+
+
+
+
+
+
+        // <button 
+        //  key={i} 
+        //  type="button" 
+        //  data-toggle="modal" 
+        //  data-target=".bd-example-modal-sm" 
+        //  className="button-list" >
+        //  <h3>To Do {e.id}</h3><br />
+        //  Title : {e.title}<br /><br />
+        //  Completed : {e.completed.toString()}
+        //  </button>
