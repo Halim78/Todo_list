@@ -15,7 +15,7 @@ class Home extends Component {
           <div className="row">
             <div className="col">
             <NavLink exact to='/allTodos'><button className="all-todo">All To Do</button></NavLink>
-            <h1>TO DO List</h1>
+            <h1>TO DO List User 1</h1>
             </div>
           </div>
           <div className="row">
@@ -28,7 +28,7 @@ class Home extends Component {
                 <Photos />
             </div>
             <div className="col-md-4">
-              <h2>Users</h2>
+              <h2>Friends</h2>
               <Users />
             </div>
           </div>

@@ -8,7 +8,7 @@ class AllTodos extends Component {
 
   state = {
     item : '',
-    newResult : [],
+    newResult : []
   } 
 
 
@@ -31,8 +31,10 @@ class AllTodos extends Component {
  
   render() {
     const todoSearch = 
-    this.state.newResult.filter(f => (f.title.indexOf(this.state.item) !== -1));
-
+    this.state.newResult.filter(f => 
+     (f.title.indexOf(this.state.item) !== -1) ||
+     (f.id.toString().indexOf(this.state.item) !== -1) ||
+     (f.completed.toString().indexOf(this.state.item) !== -1));
     return (
       <div className="container-fluid">
         <div className="row">
@@ -45,37 +47,22 @@ class AllTodos extends Component {
                 aria-label="Search"
                 onChange={this.handleChange} 
                 />
-                {/* <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button><br /> */}
             </form>
           </nav>
         </div>
-        {/* <div className="container-fluid">
-            <div className="row">
-                <div className="col-md-4">
-                    <form className="input">
-                        <button 
-                        type="button" 
-                        className="btn btn-outline-info"
-                        onClick={this.handleClick}
-                        >View
-                        </button>
-                    </form>
-                </div>
-            </div>
-         </div> 
-         */}
-         {todoSearch.map((e, i) => 
-         <button 
-          key={i} 
-          type="button" 
-          data-toggle="modal" 
-          data-target=".bd-example-modal-sm" 
-          className="button-list" >
-          <h3>To Do {e.id}</h3><br />
-          Title : {e.title}<br /><br />
-          Completed : {e.completed.toString()}
-          </button>
-         )}
+          {todoSearch.map((e, i) => 
+          <button 
+            key={i} 
+            type="button" 
+            data-toggle="modal" 
+            data-target=".bd-example-modal-sm" 
+            className="button-list" >
+            <h3>To Do {e.id}</h3><br />
+            Title : {e.title}<br /><br />
+            UserId : {e.userId}<br /><br />
+            Completed : {e.completed.toString()}
+            </button>
+          )}
       </div>
     )
   }
@@ -84,19 +71,3 @@ class AllTodos extends Component {
 export default AllTodos;
 
 
-
-
-
-
-
-
-        // <button 
-        //  key={i} 
-        //  type="button" 
-        //  data-toggle="modal" 
-        //  data-target=".bd-example-modal-sm" 
-        //  className="button-list" >
-        //  <h3>To Do {e.id}</h3><br />
-        //  Title : {e.title}<br /><br />
-        //  Completed : {e.completed.toString()}
-        //  </button>
