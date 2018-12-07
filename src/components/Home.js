@@ -4,7 +4,6 @@ import Todo from './Todo';
 import Photos from './Photos';
 import Friends from './Friends';
 import { NavLink } from 'react-router-dom';
-// import Route from '../Routes/Route';
 
 
 
@@ -34,7 +33,6 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        {/* <Route /> */}
       </div>
     )
   }

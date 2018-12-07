@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import '../css/Todo.css';
 import '../css/AllTodos.css';
+import Route from './Route';
+
 
 
 class AllTodos extends Component {
@@ -48,6 +50,7 @@ class AllTodos extends Component {
                 onChange={this.handleChange} 
                 />
             </form>
+        <Route />
           </nav>
         </div>
           {todoSearch.map((e, i) => 
