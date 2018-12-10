@@ -24,7 +24,7 @@ class Home extends Component {
                 <Todo />
             </div>
             <div className=" col-md-4">
-              <h2>Photos</h2>
+              <h2>Pictures</h2>
                 <Photos />
             </div>
             <div className="col-md-4">

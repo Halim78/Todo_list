@@ -42,10 +42,11 @@ class AllTodos extends Component {
         <div className="row">
           <nav className="navbar navbar-light">
             <form className="form-inline">
+                <label>Search </label>
                 <input 
                 className="form-control mr-sm-2" 
                 type="search" 
-                placeholder="Search" 
+                placeholder="Title, completed, id" 
                 aria-label="Search"
                 onChange={this.handleChange} 
                 />
